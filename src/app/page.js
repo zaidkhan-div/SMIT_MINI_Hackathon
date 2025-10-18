@@ -1,4 +1,5 @@
 import AfteHeroComp from '@/components/shared/AfteHeroComp'
+import Blogs from '@/components/shared/Blogs'
 import CTA from '@/components/shared/CTA'
 import Features from '@/components/shared/Features'
 import HeroChat from '@/components/shared/Hero'
@@ -23,6 +24,8 @@ const page = () => {
       <Pricing />
       {/* CTA */}
       <CTA />
+      {/* Blogs */}
+      <Blogs />
     </div>
   )
 }
