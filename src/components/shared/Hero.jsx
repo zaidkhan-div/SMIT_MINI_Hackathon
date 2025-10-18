@@ -7,13 +7,13 @@ const HeroChat = () => {
             <div className="flex flex-col md:flex-row items-center md:items-start gap-10 md:gap-12">
                 {/* Robot Image */}
                 <div className="flex-shrink-0">
-                    <div className="w-[280px] h-[280px] md:w-[480px] md:h-[480px] rounded-full bg-cyan-400/20 backdrop-blur-sm flex items-center justify-center">
+                    <div className="w-[280px] h-[280px] md:w-[550px] md:h-[550px] rounded-full bg-cyan-400/20 backdrop-blur-sm flex items-center justify-center">
                         <Image
                             src="/robot1.png"
                             alt="AI Assistant"
                             width={350}
                             height={350}
-                            className="w-[240px] h-[240px] md:w-[380px] md:h-[380px] object-contain"
+                            className="w-[240px] h-[240px] md:w-[480px] md:h-[480px] object-contain"
                         />
                     </div>
                 </div>
