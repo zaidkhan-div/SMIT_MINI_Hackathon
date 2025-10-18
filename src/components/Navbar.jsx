@@ -2,10 +2,10 @@ import React from 'react'
 
 const Navbar = () => {
     return (
-        <div className="sticky top-0 z-50 transition-colors duration-500 bg-black/10 backdrop-blur-md">
+        <div className="sticky top-0 z-50 transition-colors duration-500 bg-black/40 backdrop-blur-md">
             <div className="max-w-[1280px] w-full mx-auto px-[16px] py-[15px] flex items-center justify-between">
                 <div>
-                    <h1 className="text-xl font-bold">PitchCraft</h1>
+                    <h1 className="text-xl text-white font-bold">PitchCraft</h1>
                 </div>
 
                 {/* Menu */}
