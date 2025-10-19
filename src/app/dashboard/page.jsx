@@ -11,7 +11,7 @@ const DashboardPage = () => {
     const [pitches, setPitches] = useState([])
     const [loading, setLoading] = useState(true)
 
-   
+
 
     const fetchPitches = async () => {
         try {
