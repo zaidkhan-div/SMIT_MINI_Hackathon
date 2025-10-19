@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 
 const Footer = () => {
     return (
@@ -40,10 +41,10 @@ const Footer = () => {
                         </ul>
                     </div>
                 </div>
-
                 {/* Bottom */}
-                <div className="border-t border-white/10 pt-6">
+                <div className="border-t border-white/10 pt-6 flex flex-col items-center">
                     <p className="text-white/40 text-sm text-center">© 2024 PitchCraft. All rights reserved.</p>
+                    <Link href="https://github.com/zaidkhan-div" target='_blank' className="text-white/40 text-sm text-center">My Github</Link>
                 </div>
             </div>
         </footer>
