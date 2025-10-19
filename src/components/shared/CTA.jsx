@@ -9,7 +9,7 @@ const CTA = () => {
                         Ready to Build Your Perfect Pitch?
                     </h2>
                     <p className="text-white/90 text-lg md:text-xl max-w-[700px] mx-auto mb-10">
-                        Join hundreds of founders who've turned their ideas into investor-ready pitches with PitchCraft AI. Start for free today!
+                        Join hundreds of founders who&apos;ve turned their ideas into investor-ready pitches with PitchCraft AI. Start for free today!
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">

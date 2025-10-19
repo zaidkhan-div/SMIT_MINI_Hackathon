@@ -23,7 +23,7 @@ const HeroChat = () => {
                     {/* AI Message */}
                     <div className="bg-white text-black rounded-2xl rounded-tl-none p-6 shadow-lg">
                         <p className="text-base md:text-lg">
-                            <span className="font-bold">Welcome to PitchCraft!</span> Hey there! I'm your AI startup partner. Share your idea and I'll generate a complete pitch with name, tagline, target audience & more. Ready to build something amazing?
+                            <span className="font-bold">Welcome to PitchCraft!</span> Hey there! I&apos;m your AI startup partner. Share your idea and I&apos;ll generate a complete pitch with name, tagline, target audience & more. Ready to build something amazing?
                         </p>
                     </div>
 

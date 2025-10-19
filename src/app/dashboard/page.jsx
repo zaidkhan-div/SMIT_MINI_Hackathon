@@ -11,9 +11,7 @@ const DashboardPage = () => {
     const [pitches, setPitches] = useState([])
     const [loading, setLoading] = useState(true)
 
-    useEffect(() => {
-        fetchPitches()
-    }, [])
+   
 
     const fetchPitches = async () => {
         try {
@@ -27,12 +25,17 @@ const DashboardPage = () => {
                 ...doc.data()
             }))
             setPitches(pitchesData)
-        } catch (error) {querySnapshot
+        } catch (error) {
+            querySnapshot
             console.error("Error fetching pitches:", error)
         } finally {
             setLoading(false)
         }
     }
+
+    useEffect(() => {
+        fetchPitches()
+    }, [fetchPitches])
 
     const handleDelete = async (id) => {
         if (confirm('Delete this pitch?')) {
@@ -59,13 +62,13 @@ const DashboardPage = () => {
         <ProtectedRoute>
             <div className="min-h-screen py-12">
                 <div className="max-w-[1280px] w-full mx-auto px-[16px]">
-                    
+
                     <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-12">
                         <div>
                             <h1 className="text-4xl md:text-5xl font-bold text-white mb-2">My Pitches</h1>
                             <p className="text-white/60 text-lg">Manage and view all your startup pitches</p>
                         </div>
-                        <Link 
+                        <Link
                             href="/create"
                             className="mt-6 md:mt-0 inline-flex items-center gap-2 bg-cyan-400 text-black font-semibold px-6 py-3 rounded-xl hover:bg-cyan-500 transition-all"
                         >
@@ -79,7 +82,7 @@ const DashboardPage = () => {
                             <FileText className="mx-auto text-white/40 mb-4" size={64} />
                             <h3 className="text-white text-2xl font-bold mb-2">No Pitches Yet</h3>
                             <p className="text-white/60 mb-6">Create your first pitch to get started!</p>
-                            <Link 
+                            <Link
                                 href="/create"
                                 className="inline-flex items-center gap-2 bg-cyan-400 text-black font-semibold px-6 py-3 rounded-xl hover:bg-cyan-500 transition-all"
                             >
@@ -90,7 +93,7 @@ const DashboardPage = () => {
                     ) : (
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                             {pitches.map((pitch) => (
-                                <div 
+                                <div
                                     key={pitch.id}
                                     className="bg-white/10 backdrop-blur-sm rounded-3xl p-6 hover:bg-white/15 transition-all group"
                                 >
@@ -107,14 +110,14 @@ const DashboardPage = () => {
                                     </p>
 
                                     <div className="flex gap-3">
-                                        <Link 
+                                        <Link
                                             href={`/pitch/${pitch.id}`}
                                             className="flex-1 flex items-center justify-center gap-2 bg-cyan-400 text-black font-semibold py-2 rounded-lg hover:bg-cyan-500 transition-all"
                                         >
                                             <Eye size={18} />
                                             View
                                         </Link>
-                                        <button 
+                                        <button
                                             onClick={() => handleDelete(pitch.id)}
                                             className="px-4 cursor-pointer py-2 bg-red-500/20 text-red-400 rounded-lg hover:bg-red-500/30 transition-all"
                                         >
