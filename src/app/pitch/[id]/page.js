@@ -23,7 +23,7 @@ const ViewPitchPage = () => {
         try {
             const docRef = doc(db, 'pitches', params.id)
             const docSnap = await getDoc(docRef)
-            
+
             if (docSnap.exists()) {
                 setPitch({ id: docSnap.id, ...docSnap.data() })
             } else {
@@ -77,10 +77,10 @@ ${pitch.landingCopy}
         <ProtectedRoute>
             <div className="min-h-screen py-12">
                 <div className="max-w-[900px] w-full mx-auto px-[16px]">
-                    
+
                     {/* Header */}
                     <div className="mb-8">
-                        <Link 
+                        <Link
                             href="/dashboard"
                             className="inline-flex items-center gap-2 text-white/60 hover:text-white mb-6 transition-colors"
                         >
@@ -96,7 +96,7 @@ ${pitch.landingCopy}
                                 <h1 className="text-4xl md:text-5xl font-bold text-white mb-2">
                                     {pitch.name}
                                 </h1>
-                                <p className="text-white/60 text-xl italic">"{pitch.tagline}"</p>
+                                <p className="text-white/60 text-xl italic">&quot;{pitch.tagline}&quot;</p>
                             </div>
 
                             <button
@@ -111,7 +111,7 @@ ${pitch.landingCopy}
 
                     {/* Content */}
                     <div className="space-y-6">
-                        
+
                         {/* Elevator Pitch */}
                         <div className="bg-gradient-to-br from-cyan-400/20 to-blue-500/20 backdrop-blur-sm rounded-3xl p-8 border border-cyan-400/30">
                             <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
