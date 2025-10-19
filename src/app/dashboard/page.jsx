@@ -26,7 +26,6 @@ const DashboardPage = () => {
             }))
             setPitches(pitchesData)
         } catch (error) {
-            querySnapshot
             console.error("Error fetching pitches:", error)
         } finally {
             setLoading(false)

@@ -1,9 +1,10 @@
 import { NextResponse } from 'next/server'
 
 export function middleware(request) {
-    const token = request.cookies.get('authToken')
+    // Firebase Auth uses __session cookie, not authToken
+    const session = request.cookies.get('__session')
     
-    if (!token) {
+    if (!session) {
         return NextResponse.redirect(new URL('/login', request.url))
     }
     

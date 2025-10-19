@@ -3,7 +3,6 @@ import React, { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { Lightbulb, Target, Briefcase, Loader2 } from 'lucide-react'
 import ProtectedRoute from '@/components/ProtectedRoute'
-import { generatePitch } from '@/lib/gemini'
 import { db, auth } from '@/lib/firebase'
 import { collection, addDoc } from 'firebase/firestore'
 
