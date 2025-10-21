@@ -9,9 +9,6 @@ import VisualSection from '@/components/shared/VisualSection'
 import React from 'react'
 
 const page = () => {
-  const api_key = process.env.NEXT_PUBLIC_GEMINI_API_KEY;
-  console.log(api_key);
-  
   return (
     <div>
       <HeroChat />

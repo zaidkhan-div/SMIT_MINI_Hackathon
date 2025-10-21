@@ -11,8 +11,6 @@ const DashboardPage = () => {
     const [pitches, setPitches] = useState([])
     const [loading, setLoading] = useState(true)
 
-
-
     const fetchPitches = async () => {
         try {
             const q = query(
@@ -34,7 +32,7 @@ const DashboardPage = () => {
 
     useEffect(() => {
         fetchPitches()
-    }, [fetchPitches])
+    }, [])
 
     const handleDelete = async (id) => {
         if (confirm('Delete this pitch?')) {

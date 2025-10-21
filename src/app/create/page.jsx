@@ -35,7 +35,10 @@ const CreatePitchPage = () => {
                 })
             })
 
-            if (!response.ok) throw new Error('Failed to generate pitch')
+            if (!response.ok) {
+                const errorData = await response.json()
+                throw new Error(errorData.error || 'Failed to generate pitch')
+            }
 
             const generatedPitch = await response.json()
 

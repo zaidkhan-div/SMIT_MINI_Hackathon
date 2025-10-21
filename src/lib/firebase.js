@@ -4,12 +4,12 @@ import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyBww_5BhFwputBsU3oucaNQkLZUR_gEO_A",
-    authDomain: "minihckathon.firebaseapp.com",
-    projectId: "minihckathon",
-    storageBucket: "minihckathon.firebasestorage.app",
-    messagingSenderId: "42651674885",
-    appId: "1:42651674885:web:d6c565d0b8d46eb6de2f6c"
+    apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+    authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN ,
+    projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID ,
+    storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+    messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+    appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID
 };
 
 const app = initializeApp(firebaseConfig);

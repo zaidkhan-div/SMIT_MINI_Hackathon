@@ -8,6 +8,16 @@ export async function POST(request) {
     try {
         const { idea, description, industry } = await request.json();
 
+        // Validate required fields
+        if (!idea || !description || !industry) {
+            return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
+        }
+
+        // Check if API key is available
+        if (!process.env.NEXT_PUBLIC_GEMINI_API_KEY) {
+            return NextResponse.json({ error: "API key not configured" }, { status: 500 });
+        }
+
         const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
         const prompt = `

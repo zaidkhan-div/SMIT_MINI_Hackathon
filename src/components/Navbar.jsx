@@ -29,7 +29,7 @@ const Navbar = () => {
 
                 {/* Desktop Menu */}
                 <nav className="hidden md:flex gap-8">
-                    <a href="#" className="text-white/80 hover:text-white">Home</a>
+                    <a href="/" className="text-white/80 hover:text-white">Home</a>
                     <a href="#" className="text-white/80 hover:text-white">Features</a>
                     <a href="#" className="text-white/80 hover:text-white">Pricing</a>
                     <a href="#" className="text-white/80 hover:text-white">Blog</a>
@@ -63,8 +63,52 @@ const Navbar = () => {
                 <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/40 to-transparent"></div>
             </div>
 
-            {/* Overlay */}
-            {isOpen && <div onClick={() => setIsOpen(false)} className="fixed inset-0 bg-black/50 z-[45]" />}
+            {/* Mobile Menu */}
+            {isOpen && (
+                <div className="fixed inset-0 bg-black/50 z-[45]" onClick={() => setIsOpen(false)}>
+                    <div className="absolute top-0 right-0 w-80 h-full bg-black/95 backdrop-blur-md p-6">
+                        <div className="flex flex-col gap-6 mt-16">
+                            <nav className="flex flex-col gap-4">
+                                <a href="/" className="text-white/80 hover:text-white text-lg">Home</a>
+                                <a href="#" className="text-white/80 hover:text-white text-lg">Features</a>
+                                <a href="#" className="text-white/80 hover:text-white text-lg">Pricing</a>
+                                <a href="#" className="text-white/80 hover:text-white text-lg">Blog</a>
+                            </nav>
+                            
+                            <div className="border-t border-white/20 pt-6">
+                                {user ? (
+                                    <div className="flex flex-col gap-4">
+                                        <Link 
+                                            href='/dashboard' 
+                                            className='bg-white text-black font-semibold px-5 py-3 rounded-lg text-center'
+                                            onClick={() => setIsOpen(false)}
+                                        >
+                                            Dashboard
+                                        </Link>
+                                        <button
+                                            onClick={() => {
+                                                handleLogout()
+                                                setIsOpen(false)
+                                            }}
+                                            className='bg-red-500 text-white font-semibold px-5 py-3 rounded-lg hover:bg-red-600'
+                                        >
+                                            Logout
+                                        </button>
+                                    </div>
+                                ) : (
+                                    <Link 
+                                        className="bg-cyan-400 px-5 py-3 rounded-lg text-black font-semibold text-center hover:bg-cyan-500" 
+                                        href='/login'
+                                        onClick={() => setIsOpen(false)}
+                                    >
+                                        Login/Signup
+                                    </Link>
+                                )}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )}
         </div>
     )
 }
