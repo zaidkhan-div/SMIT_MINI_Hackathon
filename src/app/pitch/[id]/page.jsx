@@ -14,9 +14,6 @@ const ViewPitchPage = () => {
     const [loading, setLoading] = useState(true)
     const [copied, setCopied] = useState(false)
 
-    useEffect(() => {
-        fetchPitch()
-    }, [])
 
     const fetchPitch = async () => {
         try {
@@ -34,6 +31,10 @@ const ViewPitchPage = () => {
             setLoading(false)
         }
     }
+
+    useEffect(() => {
+        fetchPitch()
+    }, [])
 
     const copyToClipboard = () => {
         const text = `
